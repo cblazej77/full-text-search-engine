@@ -62,8 +62,11 @@ def search(query):
     return results
 
 if __name__ == "__main__":
-    query = "rehabilitacja ćwiczenia"
-    results = search(query)
-    print(f"Results: '{query}'\n")
-    for doc_id, filename, sim in results:
-        print(f"ID: {doc_id}, Filename: {filename}, Similarity: {sim:.3f}")
+    while True:
+        query = input("Podaj zapytanie do wyszukania ('x' aby zakończyć):\n")
+        if query == "x":
+            break
+        results = search(query)
+        print(f"Results: '{query}'\n")
+        for doc_id, filename, sim in results:
+            print(f"ID: {doc_id}, Filename: {filename}, Similarity: {sim:.3f}")

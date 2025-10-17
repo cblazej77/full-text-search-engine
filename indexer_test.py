@@ -24,11 +24,6 @@ class TestIndexer(unittest.TestCase):
     @patch("builtins.open", new_callable=mock_open, read_data='{"id":"abc","filename":"file.txt","content":"rehabilitacja"}\n')
     @patch("apache_beam.Pipeline")  
     def test_main_pipeline(self, mock_pipeline, mock_file):
-        """
-        Testuje główną funkcję pipeline w uproszczony sposób:
-        - czy pliki są wczytywane
-        - czy przetwarzanie zwraca listę dokumentów
-        """
         try:
             main()
         except Exception as e:
